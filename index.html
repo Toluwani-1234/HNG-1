@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HNG 1- Color Game</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1 data-testid="score">Score: <span id="score">0</span></h1>
+        <div class="color-box" data-testid="colorBox"></div>
+        <p data-testid="gameInstructions">Guess the colour above by selecting from the options:</p>
+        <div class="options">
+            <button class="color-option" data-testid="colorOption"></button>
+            <button class="color-option" data-testid="colorOption"></button>
+            <button class="color-option" data-testid="colorOption"></button>
+            <button class="color-option" data-testid="colorOption"></button>
+            <button class="color-option" data-testid="colorOption"></button>
+            <button class="color-option" data-testid="colorOption"></button>
+        </div>
+        <p data-testid="gameStatus" id="gameStatus"></p>
+        <button id="newGameButton" data-testid="newGameButton">New Game</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
