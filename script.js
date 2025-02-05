@@ -64,15 +64,39 @@ function checkGuess(button, selectedColor) {
         setTimeout(() => {
             button.classList.remove("wrong-guess");
         }, 500);
+        if (score === 0) {
+            endGame();
+        }
     }
 }
+// Function to handle Game Over
+function endGame() {
+    gameOver = true;
+    gameStatus.textContent = "Game Over! Click 'New Game' to restart.";
+    gameStatus.style.color = "darkred";
+
+    // Disable all color buttons
+    colorOptions.forEach(button => {
+        button.onclick = null;
+        button.style.opacity = "0.5"; 
+        button.style.cursor = "not-allowed"; 
+    });
+}
+
 
 // Function to start a new game
 function newGame() {
-    score = 0;
+    score = 5; // Reset score
+    gameOver = false; // Reset game state
     scoreDisplay.textContent = score;
     gameStatus.textContent = "Make a guess!";
     gameStatus.style.color = "black";
+
+    colorOptions.forEach(button => {
+        button.style.opacity = "1"; 
+        button.style.cursor = "pointer";
+    });
+
     generateColors();
     updateGame();
 }
