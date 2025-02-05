@@ -53,8 +53,11 @@ function checkGuess(button, selectedColor) {
             updateGame();
         }, 500);
     } else {
-        gameStatus.textContent = "Wrong! Try again.";
+        gameStatus.textContent = "Wrong! Try Again.";
         gameStatus.style.color = "red";
+
+        score = Math.max(0, score - 0.5);
+        scoreDisplay.textContent = score;
 
         button.classList.add("wrong-guess");
 
@@ -76,6 +79,4 @@ function newGame() {
 
 // Event listener for new game button
 newGameButton.addEventListener('click', newGame);
-
-// Initialize the game
 newGame();
